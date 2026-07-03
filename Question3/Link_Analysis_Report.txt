@@ -1,0 +1,15 @@
+```text
+=====================================================
+         FILE SYSTEM AND LINK ANALYSIS REPORT
+=====================================================
+1. EXPERIMENT OBSERVATIONS
+- File Type 1 (Hard Link): Shares the exact same Inode number as the original file. It represents a direct pointer to the data on disk.
+- File Type 2 (Symbolic Link): Has a completely distinct Inode number. It is a tiny text pointer storing the filename path of the source.
+
+2. IMPACT OF DELETING THE ORIGINAL FILE
+- Hard Link Behavior: Retains 100% of the contents perfectly. Deleting the original only decreases the kernel's inode link count by 1. The data is still accessible.
+- Symbolic Link Behavior: Becomes a "broken link" (dangling pointer). Trying to open it fails completely because its target path string no longer exists.
+
+3. KEY CONCLUSION
+- Hard links are highly redundant and safe from accidental primary file deletions, but they cannot cross across different storage file systems or link to directories. 
+- Symbolic links are flexible and can cross file systems/link to directories, but they break instantly if the primary source file is renamed or removed.
