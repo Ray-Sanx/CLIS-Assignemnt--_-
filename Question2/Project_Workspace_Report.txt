@@ -1,0 +1,18 @@
+```text
+=====================================================
+         SECURE PROJECT WORKSPACE REPORT
+=====================================================
+1. DIRECTORY STRUCTURE
+- project_workspace/
+    ├── docs/ (Project Documentation)
+    └── src/  (Source Code/Files)
+
+2. UMASK & INITIAL PERMISSIONS
+- Active System Umask: 0022
+- Initial Directory Permissions: drwxr-xr-x (755)
+- Owner: Sanxxx
+
+3. MODIFIED PERMISSIONS (SECURITY LOCKDOWN)
+- Executed Command: chmod 770 project_workspace
+- Final Directory Permissions: drwxrwx--- (770)
+- Impact: Full access is granted exclusively to the owner and group. Public/other users are completely blocked, preventing data leaks or unauthorized modifications to project files.
