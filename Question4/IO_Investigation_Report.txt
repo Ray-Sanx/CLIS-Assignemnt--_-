@@ -1,0 +1,21 @@
+=====================================================
+         I/O INVESTIGATION REPORT
+=====================================================
+
+1. OPEN FILES IDENTIFIED
+- Analyzed active files using 'lsof -c bash'.
+- Observed critical system libraries (.so files), the bash executable itself (txt), and current working directories (cwd) actively managed by the kernel.
+
+2. FILE DESCRIPTOR OBSERVATIONS
+- Standard file descriptors were observed mapping the process to system resources:
+  * FD 0: Standard Input (stdin)
+  * FD 1: Standard Output (stdout)
+  * FD 2: Standard Error (stderr)
+
+3. REDIRECTION RESULTS
+- Verified that '>' successfully redirects standard output (FD 1) to 'output.log'.
+- Verified that '2>' isolates and redirects standard error messages (FD 2) to 'error.log'.
+
+4. RESOURCE LIMITS OBSERVED
+- Executed 'ulimit -n', revealing a critically low maximum open file limit of 20.
+- Conclusion: This low limit causes the application to run out of available file descriptors, directly preventing it from opening and writing to its log files.
