@@ -1,0 +1,18 @@
+=====================================================
+         STORAGE HEALTH ASSESSMENT REPORT
+=====================================================
+
+1. STORAGE CAPACITY & DISK USAGE (df -h)
+- Monitored total space allocation on mounted file systems.
+- Storage volumes display optimal available thresholds with low overall space consumption, safely allowing application deployment files.
+
+2. INODE UTILIZATION STATUS (df -i)
+- Inode resource usage is verified within completely safe operating limits.
+- No risk of index exhaustion, meaning the system can safely handle a high density of microservice configuration logs.
+
+3. MOUNTED STORAGE HARDWARE (lsblk)
+- Audited available block storage layers and structural system disks. All structural device branches are configured normally.
+
+4. SYSTEM HEALTH STRATEGY & RECOMMENDATIONS
+- Recommendation 1: Implement log-rotation rules to automatically compress background transaction logging files and preserve partition headroom.
+- Recommendation 2: Set up proactive monitoring tracking alerts at an 80% capacity ceiling boundary to allow early hardware planning.
