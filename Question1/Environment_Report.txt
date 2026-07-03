@@ -1,0 +1,14 @@
+=====================================================
+         ENVIRONMENT VERIFICATION REPORT
+=====================================================
+User Account Details:
+- User Identity: Verified via 'id' command.
+- Active Shell Environment: /bin/bash (Verified via $SHELL).
+- Current Working Directory: /home/Sanxxx (Verified via 'pwd').
+
+Workspace Verification:
+- Contents listed via 'ls -la'. Workspace contains active configuration files and working lab documents.
+
+Network Status:
+- Connectivity verified via 'ping -c 4 google.com'. 
+- Result: 0% packet loss. Network interface is fully functional.
